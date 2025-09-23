@@ -1,0 +1,218 @@
+/*
+ * COMP1054 - Interface Design Using CSS
+ * Lab 1: Define Your Style (Rule)
+ * 
+ * Student: Mohamed el khoudimi
+ * Student ID: 200630733
+ * Date: September 2025
+ * 
+ * This CSS file demonstrates understanding of CSS rule components
+ * through practical styling and detailed annotations.
+ */
+
+/* Basic reset to start with a clean slate - removes browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes sizing calculations easier */
+}
+
+/* 
+ * DETAILED EXAMPLE - CSS RULE BREAKDOWN:
+ * 
+ * Let me break down this body rule to show all four components:
+ * 
+ * body {
+ *     font-family: 'Nunito', sans-serif;
+ *     line-height: 1.6;
+ * }
+ * 
+ * SELECTOR: body
+ *   - This targets the <body> element in our HTML
+ *   - It's like saying "Hey CSS, style the body tag!"
+ * 
+ * PROPERTY: font-family (I'm picking this one as an example)
+ *   - This is what aspect we want to style
+ *   - Think of it as the "what" we're changing
+ * 
+ * VALUE: 'Nunito', sans-serif
+ *   - This is the specific setting for our property
+ *   - It's the "how" we want it to look
+ * 
+ * DECLARATION: font-family: 'Nunito', sans-serif;
+ *   - This is the complete property + value + semicolon
+ *   - It's one complete styling instruction
+ */
+
+body {
+    font-family: 'Nunito', sans-serif; /* Use Google Font for better readability */
+    line-height: 1.6; /* Add some breathing room between lines */
+    color: #333; /* Dark gray instead of harsh black for easier reading */
+    background-color: #f8f9fa; /* Soft light gray background */
+}
+
+/* Container to center our content and give it some breathing room */
+.wrapper {
+    max-width: 1200px; /* Don't let content get too wide on big screens */
+    margin: 0 auto; /* Center the wrapper horizontally */
+    padding: 20px; /* Give some space around the edges */
+    background-color: #ffffff; /* Clean white background for content */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+/* Header section styling - this is where the magic happens! */
+header {
+    text-align: center; /* Center all header content */
+    margin-bottom: 2rem; /* Space below the header */
+    padding: 2rem 0; /* Vertical padding for breathing room */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Cool gradient */
+    border-radius: 8px; /* Match the wrapper's rounded corners */
+    color: white; /* White text on the colorful background */
+}
+
+/* 
+ * STUDENT ASSIGNMENT - ANALYZING THIS CSS RULE:
+ * 
+ * Here's the CSS rule I want you to analyze:
+ * 
+ * h1 {
+ *     font-size: 2.5rem;
+ *     margin: 1rem 0;
+ *     font-weight: 700;
+ *     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+ * }
+ * 
+ * MY ANALYSIS:
+ * SELECTOR: h1
+ *   - This targets all <h1> heading elements in the HTML
+ * 
+ * PROPERTY: font-size
+ *   - I chose this property because it controls how big the text appears
+ * 
+ * VALUE: 2.5rem
+ *   - This makes the heading 2.5 times the root font size
+ *   - rem units are responsive and scale well
+ * 
+ * DECLARATION: font-size: 2.5rem;
+ *   - This is the complete styling instruction with property, value, and semicolon
+ */
+
+h1 {
+    font-size: 2.5rem; /* Big and bold for the main heading */
+    margin: 1rem 0; /* Space above and below */
+    font-weight: 700; /* Extra bold weight */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Navigation links styling - making them look like buttons */
+nav a {
+    display: inline-block; /* Allows padding and margins to work properly */
+    margin: 0 15px; /* Space between each link */
+    padding: 10px 20px; /* Internal spacing to make them button-like */
+    text-decoration: none; /* Remove the default underline */
+    color: #ffffff; /* White text for visibility */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    border-radius: 25px; /* Rounded pill shape */
+    transition: all 0.3s ease; /* Smooth animation for hover effects */
+}
+
+/* Hover effect for navigation links - adds interactivity */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Secondary headings styling */
+h2 {
+    color: #667eea; /* Match our theme color */
+    font-size: 1.8rem; /* Smaller than h1 but still prominent */
+    margin: 1.5rem 0 1rem 0; /* More space above than below */
+    font-weight: 600; /* Semi-bold weight */
+    border-bottom: 2px solid #667eea; /* Underline accent */
+    padding-bottom: 0.5rem; /* Space between text and underline */
+}
+
+/* Content sections styling */
+section {
+    margin: 2rem 0; /* Vertical spacing between sections */
+    padding: 1.5rem; /* Internal padding for content */
+    background-color: #fafbfc; /* Very light gray background */
+    border-radius: 8px; /* Consistent rounded corners */
+    border-left: 4px solid #667eea; /* Colored accent bar on the left */
+}
+
+/* Paragraph styling for better readability */
+p {
+    margin-bottom: 1rem; /* Space between paragraphs */
+    font-size: 1.1rem; /* Slightly larger for easier reading */
+    line-height: 1.7; /* Extra line spacing for comfort */
+}
+
+/* Definition list styling - for the course topics */
+dl {
+    margin: 1rem 0; /* Vertical spacing */
+}
+
+/* Definition terms - the topic headings */
+dt {
+    font-weight: bold; /* Make them stand out */
+    color: #667eea; /* Theme color for consistency */
+    margin-top: 1rem; /* Space above each term */
+    font-size: 1.1rem; /* Slightly larger text */
+}
+
+/* Definition descriptions - the explanations */
+dd {
+    margin-left: 1.5rem; /* Indent to show hierarchy */
+    margin-bottom: 0.5rem; /* Small space below */
+    color: #555; /* Slightly lighter color */
+}
+
+/* Regular lists styling */
+ul {
+    margin: 1rem 0; /* Vertical spacing */
+    padding-left: 1.5rem; /* Indent the list */
+}
+
+/* List items */
+li {
+    margin-bottom: 0.5rem; /* Space between items */
+    font-size: 1.05rem; /* Slightly larger for readability */
+}
+
+/* Footer styling */
+footer {
+    text-align: center; /* Center the footer content */
+    margin-top: 3rem; /* Lots of space above */
+    padding: 2rem; /* Internal padding */
+    background-color: #667eea; /* Match our theme */
+    color: white; /* White text */
+    border-radius: 8px; /* Consistent rounded corners */
+}
+
+/* Footer paragraph styling */
+footer p {
+    margin: 0; /* Remove default paragraph margin */
+    font-weight: 500; /* Medium weight */
+}
+
+/* Mobile-friendly responsive design */
+@media (max-width: 768px) {
+    /* Adjust wrapper for smaller screens */
+    .wrapper {
+        margin: 10px; /* Less margin on mobile */
+        padding: 15px; /* Less padding too */
+    }
+    
+    /* Smaller heading on mobile */
+    h1 {
+        font-size: 2rem; /* Scale down the main heading */
+    }
+    
+    /* Stack navigation links vertically on mobile */
+    nav a {
+        display: block; /* Full width blocks */
+        margin: 5px 0; /* Vertical spacing */
+    }
+}
