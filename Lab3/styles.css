@@ -1,0 +1,197 @@
+/* =============================================================
+   LAB 3: FLEXBOX LAYOUT - MOHAMED EL KHOUDIMI (200630733)
+   ============================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f8fafc;
+    --text: #0f172a;
+    --muted: #475569;
+    --panel: #ffffff;
+    --border: #e2e8f0;
+    --accent: #2563eb;
+    --accent-600: #1d4ed8;
+    --gap: 1rem;
+}
+
+html,
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header - Using Flexbox to space brand and nav */
+.site-header {
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-link {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+}
+
+/* Top navigation - Flexbox for horizontal links */
+.top-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-link {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--text);
+}
+
+/* Hero - Flexbox to stack and center elements */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.hero .lead {
+    color: var(--muted);
+    max-width: 60ch;
+    margin: 0.5rem auto 1rem;
+}
+
+/* Hero buttons - Flexbox for side-by-side layout */
+.hero-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: var(--accent-600);
+    border-color: var(--accent-600);
+}
+
+.btn.small {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Album grid - Flexbox with wrapping for cards */
+.album {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+/* Card - Flexible sizing for 3 columns */
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* 3 cards per row: (100% - 2 gaps) / 3 */
+    flex: 1 1 calc(33.333% - var(--gap));
+    min-width: 280px;
+}
+
+.thumb {
+    background: #cbd5e1;
+    height: 180px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+/* Card actions - Flexbox with auto margin for time */
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: auto;
+}
+
+.meta {
+    color: var(--muted);
+    margin-left: auto;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    padding: 2rem 1rem 3rem;
+}
+
+.back-to-top {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - var(--gap));
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        flex: 1 1 100%;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
