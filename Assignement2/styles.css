@@ -1,0 +1,210 @@
+/* base fonts and tiny helpers */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --maxWidth: 980px;
+  --gutter: 18px;
+  --accent: #2b2f33;
+  --muted: #6b6f73;
+}
+
+/* top header area */
+.siteHeader {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.containerRow {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.navRow a {
+  margin-left: 14px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.cta {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #0b66c3;
+}
+
+/* main grid that mirrors the screenshot layout using grid */
+.pageGrid {
+  max-width: var(--maxWidth);
+  margin: 28px auto;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: auto auto 1fr;
+  gap: 18px;
+  align-items: start;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* hero sits on left column top */
+.heroArea {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.heroCard {
+  background: #343a3f;
+  color: #fff;
+  padding: 36px;
+  border-radius: 4px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroCard h1 {
+  margin: 0 0 10px 0;
+  font-family: 'Merriweather', serif;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.lead {
+  color: rgba(255,255,255,0.85);
+  max-width: 70%;
+  margin-bottom: 12px;
+}
+
+.readMore {
+  color: #cfe8ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* two feature cards under hero using grid inside grid */
+.featureRow {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.featureCard {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+  align-items: center;
+}
+
+.thumb {
+  background: #4a4d50;
+  color: #fff;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main content column with posts */
+.contentCol {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.sectionNote {
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.postCard {
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.postTitle {
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+  margin: 0 0 6px 0;
+  color: var(--accent);
+}
+
+.postMeta {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* right side column covers full height of the grid rows */
+.sideCol {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutBox {
+  background: #f7f7f7;
+  padding: 14px;
+  border: 1px solid #e9e9e9;
+}
+
+.archives ul,
+.elsewhere ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.archives a,
+.elsewhere a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* footer short */
+.siteFooter {
+  border-top: 1px solid #e7e7e7;
+  margin-top: 28px;
+  padding: 18px 0;
+  background: #fff;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .pageGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .featureRow {
+    grid-template-columns: 1fr;
+  }
+  .sideCol {
+    order: 3;
+  }
+}
